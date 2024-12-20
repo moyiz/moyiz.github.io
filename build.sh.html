@@ -7,6 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="generator" content="_src/build.sh" />
+    <meta name="darkreader-lock" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -152,15 +153,15 @@
         <nav class="menu"><ul><li><a href="index.html">~/</a><ul><li>posts/<ul><li><a href="posts/test.html">test</a></li></ul></li><li>projects/<ul><li><a href="projects/proj1/index.html">proj1/</a></li><li><a href="projects/proj2/index.html">proj2/</a></li></ul></li><li><a href="about.html">about</a></li><li><a href="build.sh.html">build.sh</a></li></ul></li></ul></nav>
         <main class="content">
                     <!--dummy comment-->
-                    <nav id="TOC" role="doc-toc">
-                        <!--dummy comment-->
-            <ul>
-            <li><a href="#bulid-script" id="toc-bulid-script">Bulid
-            Script</a></li>
-            </ul>
-          </nav>
-                    <div id="body"><h1 id="bulid-script">Bulid
-Script</h1>
+          <div id="body">
+                        <nav id="TOC" role="doc-toc">
+                            <!--dummy comment-->
+              <ul>
+              <li><a href="#bulid-script" id="toc-bulid-script">Bulid
+              Script</a></li>
+              </ul>
+            </nav>
+             <h1 id="bulid-script">Bulid Script</h1>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-ex</span></span>
@@ -256,7 +257,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        <span class="at">-o</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/</span><span class="va">${page</span><span class="op">/%</span><span class="ss">md</span><span class="op">/</span>html<span class="va">}</span><span class="st">&quot;</span></span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        <span class="co"># -V &quot;base:${BASE_URL}&quot; \</span></span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-u</span> extglob</span></code></pre></div></div>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-u</span> extglob</span></code></pre></div>
+          </div>
         </main>
       </div>
       <footer class="footer">
