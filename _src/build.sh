@@ -21,12 +21,6 @@ function cleanup {
 }
 trap cleanup EXIT
 
-if [[ $1 == "local" ]]; then
-	BASE_URL=${REPO_DIR}/
-else
-	BASE_URL=https://moyiz.github.io/
-fi
-
 # Build Script page
 {
 	echo '# Bulid Script'
@@ -85,12 +79,10 @@ for page in "${MAPFILE[@]}"; do
 		--metadata-file "${PAGE_METADATA_FILE}" \
 		--template "${SRC_DIR}/templates/page.html" \
 		--css "_src/css/layout.css" \
-		--toc=true \
 		-V defaultauthor:moyiz \
 		-V "iconspath:_src/icons" \
 		"${PAGES_DIR}/${page}" \
 		-o "${REPO_DIR}/${page/%md/html}"
-		# -V "base:${BASE_URL}" \
 done
 shopt -u extglob
 
