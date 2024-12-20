@@ -48,7 +48,10 @@ projects/
 from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
+import re
 import sys
+
+EXCLUDE_REGEX = [re.compile(r) for r in (r"^\.", r"^_", r"^404$")]
 
 
 @dataclass
@@ -70,7 +73,7 @@ def parse_pages(pages: str) -> Item:
     for path in paths:
         p = Path(path.removesuffix(".md"))
         target = f"{p}.html"
-        if p.name.startswith(".") or p.name.startswith("_"):
+        if any(r.match(p.name) for r in EXCLUDE_REGEX):
             continue
         if len(p.parts) == 1 and p.name != "index":
             root.items.append(Item(p.name, target=target))
