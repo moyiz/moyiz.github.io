@@ -1,3 +1,6 @@
+---
+toc: false
+---
 # Home
 
 > [!NOTE]
