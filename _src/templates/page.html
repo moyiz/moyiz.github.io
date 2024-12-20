@@ -1,0 +1,148 @@
+<!doctype html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang="$lang$"
+  xml:lang="$lang$"
+  $if(dir)$
+  dir="$dir$"
+  $endif$>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="_src/build.sh" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$ $if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+    $endif$ $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$ $if(description-meta)$
+    <meta name="description" content="$description-meta$" />
+    $endif$
+    <title>$if(title)$$title$$else$$pagetitle$$endif$ - moyiz</title>
+    $if(base)$
+    <base href="$base$" />
+    $endif$
+    <style>
+      $highlighting-css$
+    </style>
+    $for(css)$
+    <link rel="stylesheet" href="$css$" />
+    $endfor$
+    <!--dummy comment-->
+    $for(header-includes)$ $header-includes$ $endfor$
+    <script>
+      function toggleInvert(img) {
+        document.body.classList.toggle("invert")
+        if (document.body.classList.contains("invert")) {
+          img.src = "$iconspath$/sun-bright.svg"
+        } else {
+          img.src = "$iconspath$/moon-stars.svg"
+        }
+      }
+      function toggleMenu(img) {
+        const menu = document.querySelector(".menu")
+        menu.classList.toggle("hide-menu")
+        if (menu.classList.contains("hide-menu")) {
+          img.src = "$iconspath$/bars.svg"
+        } else {
+          img.src = "$iconspath$/list.svg"
+        }
+      }
+      function toggleSmaller(img) {
+        const layout = document.querySelector(".layout")
+        layout.classList.toggle("smaller")
+        if (layout.classList.contains("smaller")) {
+          img.src = "$iconspath$/arrows-maximize.svg"
+        } else {
+          img.src = "$iconspath$/arrows-minimize.svg"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    $for(include-before)$ $include-before$ $endfor$
+    <div class="layout">
+      <header class="header">
+        <div>
+          <img
+            id="toggle-menu"
+            class="icon"
+            src="$iconspath$/list.svg"
+            onclick="toggleMenu(this)"
+            alt="Toggle Menu" />
+          | $if(pagedraft)$
+          <div class="draft">DRAFT</div>
+          | $endif$
+          <a href="index.html">[ ~/$pagetitle$ ]</a>
+          $if(title)$ | $title$ | $endif$
+          <!--dummy comment-->
+        </div>
+        <div>
+          <img
+            id="toggle-smaller"
+            class="icon"
+            src="$iconspath$/arrows-minimize.svg"
+            onclick="toggleSmaller(this)"
+            alt="Smaller View" />
+          <img
+            id="toggle-invert"
+            class="icon"
+            src="$iconspath$/moon-stars.svg"
+            onclick="toggleInvert(this)"
+            alt="Invert Colors" />
+          |
+          <a href="https://github.com/moyiz">
+            <img
+              class="icon"
+              src="$iconspath$/github.svg"
+              alt="GitHub Profile" />
+          </a>
+        </div>
+      </header>
+      <div class="middle">
+        <nav class="menu">$menu$</nav>
+        <main class="content">
+          $if(dummy)$
+          <!--$if(title)$-->
+          <!--<header id="title-block-header">-->
+          <!--  <h1 class="title">$title$</h1>-->
+          <!--  $if(subtitle)$-->
+          <!--  <p class="subtitle">$subtitle$</p>-->
+          <!--  $endif$ $for(author)$-->
+          <!--  <p class="author">$author$</p>-->
+          <!--  $endfor$ $if(date)$-->
+          <!--  <p class="date">$date$</p>-->
+          <!--  $endif$ $if(abstract)$-->
+          <!--  <div class="abstract">-->
+          <!--    <div class="abstract-title">$abstract-title$</div>-->
+          <!--    $abstract$-->
+          <!--  </div>-->
+          <!--  $endif$-->
+          <!--</header>-->
+          <!--$endif$ -->
+          $endif$
+          <!--dummy comment-->
+          $if(toc)$
+          <nav id="$idprefix$TOC" role="doc-toc">
+            $if(toc-title)$
+            <h2 id="$idprefix$toc-title">$toc-title$</h2>
+            $endif$
+            <!--dummy comment-->
+            $table-of-contents$
+          </nav>
+          $endif$
+          <div id="body">$body$</div>
+        </main>
+      </div>
+      <footer class="footer">
+        S: $pagepath$ $if(pagelines)$| L: $pagelines$$endif$ $if(pagewords)$| W:
+        $pagewords$$endif$ $if(pagechars)$| C: $pagechars$$endif$
+        $if(pagereadtime)$| RT: $pagereadtime$$endif$
+      </footer>
+    </div>
+    $for(include-after)$ $include-after$ $endfor$
+  </body>
+</html>

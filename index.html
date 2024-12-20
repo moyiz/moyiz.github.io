@@ -1,1 +1,117 @@
-ToDo
+<!doctype html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="_src/build.sh" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+           <title>Home - moyiz</title>
+        <style>
+      
+    </style>
+        <link rel="stylesheet" href="_src/css/layout.css" />
+        <!--dummy comment-->
+    
+    <script>
+      function toggleInvert(img) {
+        document.body.classList.toggle("invert")
+        if (document.body.classList.contains("invert")) {
+          img.src = "_src/icons/sun-bright.svg"
+        } else {
+          img.src = "_src/icons/moon-stars.svg"
+        }
+      }
+      function toggleMenu(img) {
+        const menu = document.querySelector(".menu")
+        menu.classList.toggle("hide-menu")
+        if (menu.classList.contains("hide-menu")) {
+          img.src = "_src/icons/bars.svg"
+        } else {
+          img.src = "_src/icons/list.svg"
+        }
+      }
+      function toggleSmaller(img) {
+        const layout = document.querySelector(".layout")
+        layout.classList.toggle("smaller")
+        if (layout.classList.contains("smaller")) {
+          img.src = "_src/icons/arrows-maximize.svg"
+        } else {
+          img.src = "_src/icons/arrows-minimize.svg"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    
+    <div class="layout">
+      <header class="header">
+        <div>
+          <img
+            id="toggle-menu"
+            class="icon"
+            src="_src/icons/list.svg"
+            onclick="toggleMenu(this)"
+            alt="Toggle Menu" />
+          |           <a href="index.html">[ ~/index ]</a>
+           | Home | 
+          <!--dummy comment-->
+        </div>
+        <div>
+          <img
+            id="toggle-smaller"
+            class="icon"
+            src="_src/icons/arrows-minimize.svg"
+            onclick="toggleSmaller(this)"
+            alt="Smaller View" />
+          <img
+            id="toggle-invert"
+            class="icon"
+            src="_src/icons/moon-stars.svg"
+            onclick="toggleInvert(this)"
+            alt="Invert Colors" />
+          |
+          <a href="https://github.com/moyiz">
+            <img
+              class="icon"
+              src="_src/icons/github.svg"
+              alt="GitHub Profile" />
+          </a>
+        </div>
+      </header>
+      <div class="middle">
+        <nav class="menu"><ul><li><a href="index.html">~/</a><ul><li>posts/<ul><li><a href="posts/test.html">test</a></li></ul></li><li>projects/<ul><li><a href="projects/proj1/index.html">proj1/</a></li><li><a href="projects/proj2/index.html">proj2/</a></li></ul></li><li><a href="about.html">about</a></li><li><a href="build.sh.html">build.sh</a></li></ul></li></ul></nav>
+        <main class="content">
+                    <!--dummy comment-->
+                    <nav id="TOC" role="doc-toc">
+                        <!--dummy comment-->
+            <ul>
+            <li><a href="#home" id="toc-home">Home</a></li>
+            </ul>
+          </nav>
+                    <div id="body"><h1 id="home">Home</h1>
+<div class="note">
+<div class="title">
+<p>Note</p>
+</div>
+<p>This site is under construction.</p>
+</div>
+<p>A minimalist TUI flavored site for notes, thoughts, documentation and
+a showcase for unprofessional UI design.</p>
+<p>For notes regarding the design and implementation, visit <a
+href="about.html">~/about</a>.</p></div>
+        </main>
+      </div>
+      <footer class="footer">
+        S: index.md | L: 8 | W:
+        35 | C: 244
+        | RT: &lt;1min
+      </footer>
+    </div>
+    
+  </body>
+</html>
