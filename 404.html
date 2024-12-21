@@ -1,9 +1,5 @@
 <!doctype html>
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  lang=""
-  xml:lang=""
-  >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
     <meta charset="utf-8" />
     <meta name="generator" content="_src/build.sh" />
@@ -18,34 +14,7 @@
         <link rel="stylesheet" href="_src/css/layout.css" />
         <!--dummy comment-->
     
-    <script>
-      function toggleInvert(img) {
-        document.body.classList.toggle("invert")
-        if (document.body.classList.contains("invert")) {
-          img.src = "_src/icons/sun-bright.svg"
-        } else {
-          img.src = "_src/icons/moon-stars.svg"
-        }
-      }
-      function toggleMenu(img) {
-        const menu = document.querySelector(".menu")
-        menu.classList.toggle("hide-menu")
-        if (menu.classList.contains("hide-menu")) {
-          img.src = "_src/icons/bars.svg"
-        } else {
-          img.src = "_src/icons/list.svg"
-        }
-      }
-      function toggleSmaller(img) {
-        const layout = document.querySelector(".layout")
-        layout.classList.toggle("smaller")
-        if (layout.classList.contains("smaller")) {
-          img.src = "_src/icons/arrows-maximize.svg"
-        } else {
-          img.src = "_src/icons/arrows-minimize.svg"
-        }
-      }
-    </script>
+    <script src="_src/js/state.js" defer></script>
   </head>
   <body>
     
@@ -64,9 +33,15 @@
         </div>
         <div>
           <img
+            id="toggle-narrower"
+            class="icon"
+            src="_src/icons/compress-wide.svg"
+            onclick="toggleNarrower(this)"
+            alt="Narrower View" />
+          <img
             id="toggle-smaller"
             class="icon"
-            src="_src/icons/arrows-minimize.svg"
+            src="_src/icons/arrows-to-line.svg"
             onclick="toggleSmaller(this)"
             alt="Smaller View" />
           <img
