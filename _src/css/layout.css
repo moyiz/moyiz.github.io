@@ -2,8 +2,7 @@ body {
   font-family: monospace;
   font-size: 13px;
   line-height: 1.5;
-  color: #ccc;
-  background-color: #000;
+  background-color: #666;
 }
 #body {
   margin: 0 auto;
@@ -172,8 +171,6 @@ div.hanging-indent {
   margin-left: 1.5em;
   text-indent: -1.5em;
 }
-/* The extra [class] is a hack that increases specificity enough to
-         override a similar rule in reveal.js */
 ul.task-list[class] {
   list-style: none;
 }
@@ -193,6 +190,9 @@ ul.task-list li input[type="checkbox"] {
   box-sizing: border-box;
 }
 .layout {
+  color: #ccc;
+  background-color: #000;
+  margin: 0 auto;
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -200,9 +200,12 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 .layout.smaller {
-  height: 80vh;
-  width: 80vw;
-  padding-left: 20vw;
+  margin: auto;
+  height: 98vh;
+}
+.layout.narrower {
+  margin: auto;
+  width: 96vw;
 }
 .header,
 .footer {
@@ -230,18 +233,9 @@ ul.task-list li input[type="checkbox"] {
   overflow-y: auto;
 }
 .menu ul {
-  /*list-style-image: url("../icons/arrow-turn-down-right.svg");*/
   list-style-type: none;
   /*line-height: 1;*/
-  /*padding: 0 0;*/
   padding: 0 1em;
-}
-.menu ul li ul li:before {
-  /*content: "\2514";*/
-  /*content: "\251C";*/
-  /*font-size: 1.5em;*/
-  /*margin: 0 0.5em;*/
-  /*filter: invert(1);*/
 }
 .icon {
   filter: invert(1);

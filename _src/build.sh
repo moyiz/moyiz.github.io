@@ -80,7 +80,6 @@ for page in "${MAPFILE[@]}"; do
 		--template "${SRC_DIR}/templates/page.html" \
 		--css "_src/css/layout.css" \
 		-V defaultauthor:moyiz \
-		-V "iconspath:_src/icons" \
 		"${PAGES_DIR}/${page}" \
 		-o "${REPO_DIR}/${page/%md/html}"
 done

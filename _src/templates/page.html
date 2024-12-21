@@ -1,11 +1,5 @@
 <!doctype html>
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  lang="$lang$"
-  xml:lang="$lang$"
-  $if(dir)$
-  dir="$dir$"
-  $endif$>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$">
   <head>
     <meta charset="utf-8" />
     <meta name="generator" content="_src/build.sh" />
@@ -31,34 +25,7 @@
     $endfor$
     <!--dummy comment-->
     $for(header-includes)$ $header-includes$ $endfor$
-    <script>
-      function toggleInvert(img) {
-        document.body.classList.toggle("invert")
-        if (document.body.classList.contains("invert")) {
-          img.src = "$iconspath$/sun-bright.svg"
-        } else {
-          img.src = "$iconspath$/moon-stars.svg"
-        }
-      }
-      function toggleMenu(img) {
-        const menu = document.querySelector(".menu")
-        menu.classList.toggle("hide-menu")
-        if (menu.classList.contains("hide-menu")) {
-          img.src = "$iconspath$/bars.svg"
-        } else {
-          img.src = "$iconspath$/list.svg"
-        }
-      }
-      function toggleSmaller(img) {
-        const layout = document.querySelector(".layout")
-        layout.classList.toggle("smaller")
-        if (layout.classList.contains("smaller")) {
-          img.src = "$iconspath$/arrows-maximize.svg"
-        } else {
-          img.src = "$iconspath$/arrows-minimize.svg"
-        }
-      }
-    </script>
+    <script src="_src/js/state.js" defer></script>
   </head>
   <body>
     $for(include-before)$ $include-before$ $endfor$
@@ -68,7 +35,7 @@
           <img
             id="toggle-menu"
             class="icon"
-            src="$iconspath$/list.svg"
+            src="_src/icons/list.svg"
             onclick="toggleMenu(this)"
             alt="Toggle Menu" />
           | $if(pagedraft)$
@@ -80,22 +47,28 @@
         </div>
         <div>
           <img
+            id="toggle-narrower"
+            class="icon"
+            src="_src/icons/compress-wide.svg"
+            onclick="toggleNarrower(this)"
+            alt="Narrower View" />
+          <img
             id="toggle-smaller"
             class="icon"
-            src="$iconspath$/arrows-minimize.svg"
+            src="_src/icons/arrows-to-line.svg"
             onclick="toggleSmaller(this)"
             alt="Smaller View" />
           <img
             id="toggle-invert"
             class="icon"
-            src="$iconspath$/moon-stars.svg"
+            src="_src/icons/moon-stars.svg"
             onclick="toggleInvert(this)"
             alt="Invert Colors" />
           |
           <a href="https://github.com/moyiz">
             <img
               class="icon"
-              src="$iconspath$/github.svg"
+              src="_src/icons/github.svg"
               alt="GitHub Profile" />
           </a>
         </div>
