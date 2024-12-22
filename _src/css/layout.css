@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
   color: #ccc;
   background-color: #000;
   margin: 0 auto;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -201,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 }
 .layout.smaller {
   margin: auto;
-  height: 98vh;
+  height: 98dvh;
 }
 .layout.narrower {
   margin: auto;
