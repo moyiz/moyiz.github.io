@@ -7,7 +7,8 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-           <title>Bulid Script - moyiz</title>
+           <meta property="og:image" content="preview.png" />
+    <title>Bulid Script - moyiz</title>
     <style>
       pre > code.sourceCode { white-space: pre; position: relative; }
       pre > code.sourceCode > span { line-height: 1.25; }
@@ -220,13 +221,14 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-u</span> extglob</span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate favicon</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.ico&quot;</span></span></code></pre></div>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.ico&quot;</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="at">-scale</span> 300x300 <span class="at">-monochrome</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/preview.png&quot;</span></span></code></pre></div>
           </div>
         </main>
       </div>
       <footer class="footer">
-        S: build.sh.md | L: 92 | W:
-        300 | C: 2483
+        S: build.sh.md | L: 94 | W:
+        306 | C: 2569
         | RT: &lt;2min
       </footer>
     </div>
