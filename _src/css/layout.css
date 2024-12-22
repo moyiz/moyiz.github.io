@@ -241,6 +241,7 @@ ul.task-list li input[type="checkbox"] {
   filter: invert(1);
   height: 1em;
   vertical-align: middle;
+  cursor: pointer;
 }
 body.invert {
   filter: invert(1);
