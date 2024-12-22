@@ -18,8 +18,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://moyiz.github.io/preview.png" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="128" />
-    <meta property="og:image:height" content="128" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="200" />
     <meta property="og:image:alt" content="Logo" />
     <meta property="og:description" content="Testing description" />
 
@@ -238,13 +238,16 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate favicon</span></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.ico&quot;</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="at">-scale</span> 175x175 <span class="at">-monochrome</span> <span class="at">-background</span> black <span class="at">-gravity</span> center <span class="at">-extent</span> 400x200 <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/preview.png&quot;</span></span></code></pre></div>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate OpenGraph image</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="at">-scale</span> 175x175 <span class="at">-monochrome</span> <span class="at">-background</span> black <span class="dt">\</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">-gravity</span> center <span class="at">-extent</span> 400x200 <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/preview.png&quot;</span></span></code></pre></div>
           </div>
         </main>
       </div>
       <footer class="footer">
-        S: build.sh.md | L: 94 | W:
-        316 | C: 2664
+        S: build.sh.md | L: 97 | W:
+        321 | C: 2695
         | RT: &lt;2min
       </footer>
     </div>
