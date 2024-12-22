@@ -12,7 +12,7 @@ MENU_FILE=$(mktemp)
 PAGE_METADATA_FILE=$(mktemp)
 BUILD_SCRIPT_PAGE="${PAGES_DIR}/build.sh.md"
 
-# Clean temp files
+# Clean temp files on exit
 function cleanup {
 	[[ -f ${MENU_FILE} ]] && rm -f "${MENU_FILE}"
 	[[ -f ${PAGE_LIST_FILE} ]] && rm -f "${PAGE_LIST_FILE}"
@@ -21,7 +21,13 @@ function cleanup {
 }
 trap cleanup EXIT
 
-# Build Script page
+if [[ $1 == "release" ]]; then
+	BASE_URL=https://moyiz.github.io
+else
+	BASE_URL=${REPO_DIR}
+fi
+
+# Generate a page for the build script
 {
 	echo '# Bulid Script'
 	echo '```bash'
@@ -29,8 +35,12 @@ trap cleanup EXIT
 	echo '```'
 } > "${BUILD_SCRIPT_PAGE}"
 
+# Create directories
+find "${PAGES_DIR}" -mindepth 1 -type d -printf '%P\n' | xargs mkdir -p
+
 # All pages (without PAGES_DIR prefix)
 find "${PAGES_DIR}" -type f -name '*.md' -printf '%P\n' > "${PAGE_LIST_FILE}"
+cat "${PAGE_LIST_FILE}"
 
 # Load all pages into `MAPFILE`
 readarray -t < "${PAGE_LIST_FILE}"
@@ -43,7 +53,7 @@ readarray -t < "${PAGE_LIST_FILE}"
 	# The following will notate HTML as raw text in a markdown code block.
 	echo '  ```{=html}'
 	echo -n '  '
-	python "${SRC_DIR}/scripts/generate_menu.py" "${PAGE_LIST_FILE}"
+	python "${SRC_DIR}/scripts/generate_menu.py" "${PAGE_LIST_FILE}" "${BASE_URL}"
 	echo '  ```'
 	echo '---'
 } > "${MENU_FILE}"
@@ -53,10 +63,14 @@ cat "${MENU_FILE}"
 shopt -s extglob
 # Generate all pages
 for page in "${MAPFILE[@]}"; do
+	# Get the relative path from the current page to the root directory
+	reporelpath=$(realpath -m "${REPO_DIR}" --relative-to="$(dirname "${page}")")
+
 	# Generate page metadata
 	{
 		read -a count <<< "$(wc "${PAGES_DIR}/${page}")"
 		echo '---'
+		echo "toc: false" # off by default toc generation
 		echo "pagelines: '${count[0]}'"
 		echo "pagewords: '${count[1]}'"
 		echo "pagechars: '${count[2]}'"
@@ -65,22 +79,24 @@ for page in "${MAPFILE[@]}"; do
 		[[ ${page##*/} =~ ^\. ]] && echo "pagedraft: '1'"
 		[[ ${page##*/} =~ ^_ ]] && echo "pagehidden: '1'"
 		echo "pagereadtime: '<$((count[1] / 238 + 1))min'" # Avg: 238 WPM
+		echo "reporelpath: '${reporelpath}'"
 		echo '---'
 	} > "${PAGE_METADATA_FILE}"
+
+	# Generate the page
 	# gfm -> Github-Flavored Markdown
 	pandoc \
 		-f gfm -t html \
 		--standalone \
 		--lua-filter "${FILTERS_DIR}/title.lua" \
-		--lua-filter "${FILTERS_DIR}/link_html.lua" \
-		--lua-filter "${FILTERS_DIR}/link_anchor.lua" \
+		--lua-filter "${FILTERS_DIR}/link.lua" \
 		--highlight-style=breezedark \
 		--metadata-file "${MENU_FILE}" \
 		--metadata-file "${PAGE_METADATA_FILE}" \
 		--template "${SRC_DIR}/templates/page.html" \
-		--css "_src/css/layout.css" \
+		--toc \
 		-V defaultauthor:moyiz \
-		-V "description-meta:Testing description" \
+		-V "description-meta:Now is better than never. Although never is often better than *right* now." \
 		"${PAGES_DIR}/${page}" \
 		-o "${REPO_DIR}/${page/%md/html}"
 done

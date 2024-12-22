@@ -36,13 +36,11 @@
     <style>
       $highlighting-css$
     </style>
-    $for(css)$
-    <link rel="stylesheet" href="$css$" />
-    $endfor$
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="$reporelpath$/_src/css/layout.css" />
+    <link rel="icon" type="image/x-icon" href="$reporelpath$/favicon.ico" />
     <!--dummy comment-->
     $for(header-includes)$ $header-includes$ $endfor$
-    <script src="_src/js/state.js" defer></script>
+    <script src="$reporelpath$/_src/js/state.js" defer></script>
   </head>
   <body>
     $for(include-before)$ $include-before$ $endfor$
@@ -52,7 +50,7 @@
           <img
             id="toggle-menu"
             class="icon"
-            src="_src/icons/list.svg"
+            src="$reporelpath$/_src/icons/list.svg"
             onclick="toggleMenu(this)"
             alt="Toggle Menu" />
           | $if(pagedraft)$
@@ -66,26 +64,26 @@
           <img
             id="toggle-narrower"
             class="icon"
-            src="_src/icons/compress-wide.svg"
+            src="$reporelpath$/_src/icons/compress-wide.svg"
             onclick="toggleNarrower(this)"
             alt="Narrower View" />
           <img
             id="toggle-smaller"
             class="icon"
-            src="_src/icons/arrows-to-line.svg"
+            src="$reporelpath$/_src/icons/arrows-to-line.svg"
             onclick="toggleSmaller(this)"
             alt="Smaller View" />
           <img
             id="toggle-invert"
             class="icon"
-            src="_src/icons/moon-stars.svg"
+            src="$reporelpath$/_src/icons/moon-stars.svg"
             onclick="toggleInvert(this)"
             alt="Invert Colors" />
           |
           <a href="https://github.com/moyiz">
             <img
               class="icon"
-              src="_src/icons/github.svg"
+              src="$reporelpath$/_src/icons/github.svg"
               alt="GitHub Profile" />
           </a>
         </div>

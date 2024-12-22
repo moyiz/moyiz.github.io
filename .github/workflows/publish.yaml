@@ -19,7 +19,7 @@ jobs:
           version: 3.1.11.1
       - name: Generate HTML pages
         run: |
-          ./_src/build.sh
+          ./_src/build.sh release
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "release: generate and publish"

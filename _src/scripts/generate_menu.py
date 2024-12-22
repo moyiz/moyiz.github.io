@@ -91,24 +91,24 @@ def parse_pages(pages: str) -> Item:
     return root
 
 
-def generate_html(items: list[Item]) -> str:
+def generate_html(items: list[Item], base_url: str) -> str:
     s = ""
     if items:
         s = "<ul>"
         for item in items:
             s += "<li>"
             if item.target:
-                s += f'<a href="{item.target}">{item.label}</a>'
+                s += f'<a href="{base_url}/{item.target}">{item.label}</a>'
             else:
                 s += item.label
-            s += generate_html(item.items)
+            s += generate_html(item.items, base_url=base_url)
             s += "</li>"
         s += "</ul>"
     return s
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         _ = sys.stderr.write(f"Usage: {sys.argv[0]} <FILE>")
         sys.exit(1)
     print(
@@ -117,5 +117,6 @@ if __name__ == "__main__":
                 label="dummy",
                 items=[parse_pages(Path(sys.argv[1]).read_text())],
             ).items,
+            base_url=sys.argv[2],
         )
     )
