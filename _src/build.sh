@@ -87,3 +87,5 @@ shopt -u extglob
 
 # Generate favicon
 magick "${SRC_DIR}/favicon.bmp" "${REPO_DIR}/favicon.ico"
+magick "${SRC_DIR}/favicon.bmp" -scale 300x300 -monochrome "${REPO_DIR}/preview.png"
+
