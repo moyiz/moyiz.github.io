@@ -238,13 +238,13 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate favicon</span></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.ico&quot;</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="at">-scale</span> 128x128 <span class="at">-monochrome</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/preview.png&quot;</span></span></code></pre></div>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="at">-scale</span> 175x175 <span class="at">-monochrome</span> <span class="at">-background</span> black <span class="at">-gravity</span> center <span class="at">-extent</span> 400x200 <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/preview.png&quot;</span></span></code></pre></div>
           </div>
         </main>
       </div>
       <footer class="footer">
-        S: build.sh.md | L: 95 | W:
-        310 | C: 2615
+        S: build.sh.md | L: 94 | W:
+        316 | C: 2664
         | RT: &lt;2min
       </footer>
     </div>
