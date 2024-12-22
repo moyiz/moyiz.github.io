@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Setup imagemagick
+        uses: mfinelli/setup-imagemagick@v5
       - name: Setup pandoc
         uses: pandoc/actions/setup@v1
         with:

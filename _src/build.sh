@@ -85,3 +85,5 @@ for page in "${MAPFILE[@]}"; do
 done
 shopt -u extglob
 
+# Generate favicon
+magick "${SRC_DIR}/favicon.bmp" "${REPO_DIR}/favicon.ico"
