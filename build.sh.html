@@ -77,7 +77,8 @@
       code span.wa { color: #da4453; } /* Warning */
     </style>
         <link rel="stylesheet" href="_src/css/layout.css" />
-        <!--dummy comment-->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--dummy comment-->
     
     <script src="_src/js/state.js" defer></script>
   </head>
@@ -216,13 +217,16 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">/</span><span class="va">${page}</span><span class="st">&quot;</span> <span class="dt">\</span></span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>        <span class="at">-o</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/</span><span class="va">${page</span><span class="op">/%</span><span class="ss">md</span><span class="op">/</span>html<span class="va">}</span><span class="st">&quot;</span></span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-u</span> extglob</span></code></pre></div>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-u</span> extglob</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate favicon</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${SRC_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.ico&quot;</span></span></code></pre></div>
           </div>
         </main>
       </div>
       <footer class="footer">
-        S: build.sh.md | L: 90 | W:
-        294 | C: 2406
+        S: build.sh.md | L: 92 | W:
+        300 | C: 2483
         | RT: &lt;2min
       </footer>
     </div>
