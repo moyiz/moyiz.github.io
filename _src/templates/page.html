@@ -16,7 +16,13 @@
     $endif$ $if(description-meta)$
     <meta name="description" content="$description-meta$" />
     $endif$
+    <meta
+      property="og:title"
+      content="$if(title)$$title$$else$$pagetitle$$endif$" />
+    <meta property="og:type" content="website" />
     <meta property="og:image" content="https://moyiz.github.io/preview.png" />
+    <meta porperty="og:description" content="$description-meta$" />
+
     <title>$if(title)$$title$$else$$pagetitle$$endif$ - moyiz</title>
     <style>
       $highlighting-css$

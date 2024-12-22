@@ -80,6 +80,7 @@ for page in "${MAPFILE[@]}"; do
 		--template "${SRC_DIR}/templates/page.html" \
 		--css "_src/css/layout.css" \
 		-V defaultauthor:moyiz \
+		-V "description-meta:Testing description" \
 		"${PAGES_DIR}/${page}" \
 		-o "${REPO_DIR}/${page/%md/html}"
 done
