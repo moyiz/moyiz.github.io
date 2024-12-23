@@ -75,6 +75,9 @@ DIST_ICONS_DIR="${DIST_DIR}/_icons"
 [[ -e "${DIST_ICONS_DIR}" ]] && rm -rf "${DIST_ICONS_DIR}"
 cp -rv "${REPO_DIR}/icons" "${DIST_ICONS_DIR}"
 
+# No Jekyll
+[[ ! -e "${DIST_DIR}/.nojekyll" ]] && touch "${DIST_DIR}/.nojekyll"
+
 shopt -s extglob
 # Generate all pages
 for page in "${MAPFILE[@]}"; do
