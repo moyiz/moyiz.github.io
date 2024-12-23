@@ -38,7 +38,7 @@
       }
       @media print {
       pre > code.sourceCode { white-space: pre-wrap; }
-      pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
       }
       pre.numberSource code
         { counter-reset: source-line 0; }
@@ -143,7 +143,7 @@
         </div>
       </header>
       <div class="middle">
-        <nav class="menu"><ul><li><a href="https://moyiz.github.io/index.html">~/</a><ul><li>projects/<ul><li><a href="https://moyiz.github.io/projects/moyiz.github.io/index.html">moyiz.github.io/</a></li></ul></li><li><a href="https://moyiz.github.io/about.html">about</a></li><li><a href="https://moyiz.github.io/build.sh.html">build.sh</a></li></ul></li></ul></nav>
+        <nav class="menu"><ul><li><a href="https://moyiz.github.io/index.html">~/</a><ul><li><a href="https://moyiz.github.io/build.sh.html">build.sh</a></li></ul></li></ul></nav>
         <main class="content">
                     <!--dummy comment-->
           <div id="body">
@@ -187,7 +187,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">${BUILD_SCRIPT_PAGE}</span><span class="st">&quot;</span></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Create directories</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">&quot;</span> <span class="at">-mindepth</span> 1 <span class="at">-type</span> d <span class="at">-printf</span> <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/%P\n&quot;</span> <span class="kw">|</span> <span class="fu">xargs</span> mkdir <span class="at">-p</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">&quot;</span> <span class="at">-mindepth</span> 1 <span class="at">-type</span> d <span class="at">-printf</span> <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/%P\n&quot;</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">--no-run-if-empty</span> mkdir <span class="at">-p</span></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># All pages (without PAGES_DIR prefix)</span></span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">&quot;</span> <span class="at">-type</span> f <span class="at">-name</span> <span class="st">&#39;*.md&#39;</span> <span class="at">-printf</span> <span class="st">&#39;%P\n&#39;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">${PAGE_LIST_FILE}</span><span class="st">&quot;</span></span>
@@ -279,7 +279,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
       </div>
       <footer class="footer">
         S: build.sh.md | L: 128 | W:
-        444 | C: 3632
+        445 | C: 3650
         | RT: &lt;2min
       </footer>
     </div>
