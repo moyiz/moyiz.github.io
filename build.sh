@@ -1,12 +1,12 @@
 #!/bin/bash
 set -ex
 
-REPO_DIR=$(dirname "$(dirname "$(realpath "$0")")")
+REPO_DIR=$(dirname "$(realpath "$0")")
 [[ ! -d $REPO_DIR/.git ]] && echo "REPO_DIR=$REPO_DIR seems invalid." && exit 1
 
-SRC_DIR=${REPO_DIR}/_src
-PAGES_DIR=${SRC_DIR}/content
-FILTERS_DIR=${SRC_DIR}/filters
+PAGES_DIR=${REPO_DIR}/content
+FILTERS_DIR=${REPO_DIR}/filters
+DIST_DIR=${REPO_DIR}/dist
 PAGE_LIST_FILE=$(mktemp)
 MENU_FILE=$(mktemp)
 PAGE_METADATA_FILE=$(mktemp)
@@ -24,7 +24,7 @@ trap cleanup EXIT
 if [[ $1 == "release" ]]; then
 	BASE_URL=https://moyiz.github.io
 else
-	BASE_URL=${REPO_DIR}
+	BASE_URL=${DIST_DIR}
 fi
 
 # Generate a page for the build script
@@ -36,7 +36,7 @@ fi
 } > "${BUILD_SCRIPT_PAGE}"
 
 # Create directories
-find "${PAGES_DIR}" -mindepth 1 -type d -printf '%P\n' | xargs mkdir -p
+find "${PAGES_DIR}" -mindepth 1 -type d -printf "${DIST_DIR}/%P\n" | xargs mkdir -p
 
 # All pages (without PAGES_DIR prefix)
 find "${PAGES_DIR}" -type f -name '*.md' -printf '%P\n' > "${PAGE_LIST_FILE}"
@@ -53,7 +53,7 @@ readarray -t < "${PAGE_LIST_FILE}"
 	# The following will notate HTML as raw text in a markdown code block.
 	echo '  ```{=html}'
 	echo -n '  '
-	python "${SRC_DIR}/scripts/generate_menu.py" "${PAGE_LIST_FILE}" "${BASE_URL}"
+	python "${REPO_DIR}/scripts/generate_menu.py" "${PAGE_LIST_FILE}" "${BASE_URL}"
 	echo '  ```'
 	echo '---'
 } > "${MENU_FILE}"
@@ -93,18 +93,18 @@ for page in "${MAPFILE[@]}"; do
 		--highlight-style=breezedark \
 		--metadata-file "${MENU_FILE}" \
 		--metadata-file "${PAGE_METADATA_FILE}" \
-		--template "${SRC_DIR}/templates/page.html" \
+		--template "${REPO_DIR}/templates/page.html" \
 		--toc \
 		-V defaultauthor:moyiz \
 		-V "description-meta:Now is better than never. Although never is often better than *right* now." \
 		"${PAGES_DIR}/${page}" \
-		-o "${REPO_DIR}/${page/%md/html}"
+		-o "${DIST_DIR}/${page/%md/html}"
 done
 shopt -u extglob
 
 # Generate favicon
-magick "${SRC_DIR}/favicon.bmp" "${REPO_DIR}/favicon.ico"
+magick "${REPO_DIR}/favicon.bmp" "${DIST_DIR}/favicon.ico"
 
 # Generate OpenGraph image
-magick "${SRC_DIR}/favicon.bmp" -scale 175x175 -monochrome -background black \
-	-gravity center -extent 400x200 "${REPO_DIR}/preview.png"
+magick "${REPO_DIR}/favicon.bmp" -scale 175x175 -monochrome -background black \
+	-gravity center -extent 400x200 "${DIST_DIR}/preview.png"
