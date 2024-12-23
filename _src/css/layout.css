@@ -9,7 +9,6 @@ body {
   max-width: 57em;
   padding-left: 50px;
   padding-right: 50px;
-  /*padding-top: 25px;*/
   padding-bottom: 50px;
   hyphens: auto;
   overflow-wrap: break-word;
@@ -201,11 +200,11 @@ ul.task-list li input[type="checkbox"] {
 }
 .layout.smaller {
   margin: auto;
-  height: 98dvh;
+  height: calc(100dvh - 2em);
 }
 .layout.narrower {
   margin: auto;
-  width: 96vw;
+  width: calc(100dvw - 2em);
 }
 .header,
 .footer {
@@ -234,7 +233,6 @@ ul.task-list li input[type="checkbox"] {
 }
 .menu ul {
   list-style-type: none;
-  /*line-height: 1;*/
   padding: 0 1em;
 }
 .icon {
