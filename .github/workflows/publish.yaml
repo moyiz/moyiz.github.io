@@ -24,4 +24,4 @@ jobs:
         with:
           commit_message: "release: generate and publish"
           branch: ${{ github.head_ref }}
-          file_pattern: "/docs/*"
+          file_pattern: "docs/*"
