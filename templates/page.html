@@ -24,7 +24,7 @@
       property="og:title"
       content="$if(title)$$title$$else$$pagetitle$$endif$" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://moyiz.github.io/preview.png" />
+    <meta property="og:image" content="$baseurl$/_preview.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="200" />
@@ -36,11 +36,11 @@
     <style>
       $highlighting-css$
     </style>
-    <link rel="stylesheet" href="$reporelpath$/_src/css/layout.css" />
-    <link rel="icon" type="image/x-icon" href="$reporelpath$/favicon.ico" />
+    <link rel="stylesheet" href="$baseurl$/_css/layout.css" />
+    <link rel="icon" type="image/x-icon" href="$baseurl$/favicon.ico" />
     <!--dummy comment-->
     $for(header-includes)$ $header-includes$ $endfor$
-    <script src="$reporelpath$/_src/js/state.js" defer></script>
+    <script src="$baseurl$/_js/state.js" defer></script>
   </head>
   <body>
     $for(include-before)$ $include-before$ $endfor$
@@ -50,7 +50,7 @@
           <img
             id="toggle-menu"
             class="icon"
-            src="$reporelpath$/_src/icons/list.svg"
+            src="$baseurl$/_icons/list.svg"
             onclick="toggleMenu(this)"
             alt="Toggle Menu" />
           | $if(pagedraft)$
@@ -64,26 +64,26 @@
           <img
             id="toggle-narrower"
             class="icon"
-            src="$reporelpath$/_src/icons/compress-wide.svg"
+            src="$baseurl$/_icons/compress-wide.svg"
             onclick="toggleNarrower(this)"
             alt="Narrower View" />
           <img
             id="toggle-smaller"
             class="icon"
-            src="$reporelpath$/_src/icons/arrows-to-line.svg"
+            src="$baseurl$/_icons/arrows-to-line.svg"
             onclick="toggleSmaller(this)"
             alt="Smaller View" />
           <img
             id="toggle-invert"
             class="icon"
-            src="$reporelpath$/_src/icons/moon-stars.svg"
+            src="$baseurl$/_icons/moon-stars.svg"
             onclick="toggleInvert(this)"
             alt="Invert Colors" />
           |
           <a href="https://github.com/moyiz">
             <img
               class="icon"
-              src="$reporelpath$/_src/icons/github.svg"
+              src="$baseurl$/_icons/github.svg"
               alt="GitHub Profile" />
           </a>
         </div>

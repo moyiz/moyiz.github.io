@@ -16,7 +16,7 @@
       property="og:title"
       content="Bulid Script" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://moyiz.github.io/preview.png" />
+    <meta property="og:image" content="https://moyiz.github.io/_preview.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="200" />
@@ -93,11 +93,11 @@
       code span.vs { color: #da4453; } /* VerbatimString */
       code span.wa { color: #da4453; } /* Warning */
     </style>
-    <link rel="stylesheet" href="./_src/css/layout.css" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="https://moyiz.github.io/_css/layout.css" />
+    <link rel="icon" type="image/x-icon" href="https://moyiz.github.io/favicon.ico" />
     <!--dummy comment-->
     
-    <script src="./_src/js/state.js" defer></script>
+    <script src="https://moyiz.github.io/_js/state.js" defer></script>
   </head>
   <body>
     
@@ -107,7 +107,7 @@
           <img
             id="toggle-menu"
             class="icon"
-            src="./_src/icons/list.svg"
+            src="https://moyiz.github.io/_icons/list.svg"
             onclick="toggleMenu(this)"
             alt="Toggle Menu" />
           |           <a href="index.html">[ ~/build.sh ]</a>
@@ -118,32 +118,32 @@
           <img
             id="toggle-narrower"
             class="icon"
-            src="./_src/icons/compress-wide.svg"
+            src="https://moyiz.github.io/_icons/compress-wide.svg"
             onclick="toggleNarrower(this)"
             alt="Narrower View" />
           <img
             id="toggle-smaller"
             class="icon"
-            src="./_src/icons/arrows-to-line.svg"
+            src="https://moyiz.github.io/_icons/arrows-to-line.svg"
             onclick="toggleSmaller(this)"
             alt="Smaller View" />
           <img
             id="toggle-invert"
             class="icon"
-            src="./_src/icons/moon-stars.svg"
+            src="https://moyiz.github.io/_icons/moon-stars.svg"
             onclick="toggleInvert(this)"
             alt="Invert Colors" />
           |
           <a href="https://github.com/moyiz">
             <img
               class="icon"
-              src="./_src/icons/github.svg"
+              src="https://moyiz.github.io/_icons/github.svg"
               alt="GitHub Profile" />
           </a>
         </div>
       </header>
       <div class="middle">
-        <nav class="menu"><ul><li><a href="/home/moyiz/workspace/moyiz.github.io2/dist/index.html">~/</a><ul><li>posts/<ul><li><a href="/home/moyiz/workspace/moyiz.github.io2/dist/posts/test.html">test</a></li></ul></li><li>projects/<ul><li><a href="/home/moyiz/workspace/moyiz.github.io2/dist/projects/moyiz.github.io/index.html">moyiz.github.io/</a><ul><li><a href="/home/moyiz/workspace/moyiz.github.io2/dist/projects/moyiz.github.io/status.html">status</a></li><li><a href="/home/moyiz/workspace/moyiz.github.io2/dist/projects/moyiz.github.io/dev.html">dev</a></li></ul></li></ul></li><li><a href="/home/moyiz/workspace/moyiz.github.io2/dist/about.html">about</a></li><li><a href="/home/moyiz/workspace/moyiz.github.io2/dist/build.sh.html">build.sh</a></li></ul></li></ul></nav>
+        <nav class="menu"><ul><li><a href="https://moyiz.github.io/index.html">~/</a><ul><li>projects/<ul><li><a href="https://moyiz.github.io/projects/moyiz.github.io/index.html">moyiz.github.io/</a></li></ul></li><li><a href="https://moyiz.github.io/about.html">about</a></li><li><a href="https://moyiz.github.io/build.sh.html">build.sh</a></li></ul></li></ul></nav>
         <main class="content">
                     <!--dummy comment-->
           <div id="body">
@@ -157,7 +157,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="va">PAGES_DIR</span><span class="op">=</span><span class="va">${REPO_DIR}</span>/content</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="va">FILTERS_DIR</span><span class="op">=</span><span class="va">${REPO_DIR}</span>/filters</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="va">DIST_DIR</span><span class="op">=</span><span class="va">${REPO_DIR}</span>/dist</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="va">DIST_DIR</span><span class="op">=</span><span class="va">${REPO_DIR}</span>/docs</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="va">PAGE_LIST_FILE</span><span class="op">=</span><span class="va">$(</span><span class="fu">mktemp</span><span class="va">)</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="va">MENU_FILE</span><span class="op">=</span><span class="va">$(</span><span class="fu">mktemp</span><span class="va">)</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="va">PAGE_METADATA_FILE</span><span class="op">=</span><span class="va">$(</span><span class="fu">mktemp</span><span class="va">)</span></span>
@@ -211,60 +211,75 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="st">&quot;</span><span class="va">${MENU_FILE}</span><span class="st">&quot;</span></span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-s</span> extglob</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate all pages</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> page <span class="kw">in</span> <span class="st">&quot;</span><span class="va">${MAPFILE</span><span class="op">[@]</span><span class="va">}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the relative path from the current page to the root directory</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="va">reporelpath</span><span class="op">=</span><span class="va">$(</span><span class="fu">realpath</span> <span class="at">-m</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">&quot;</span> <span class="at">--relative-to</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">${page}</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span><span class="va">)</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate page metadata</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">{</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>        <span class="bu">read</span> <span class="at">-a</span> <span class="va">count</span> <span class="op">&lt;&lt;&lt;</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">wc</span> <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">/</span><span class="va">${page}</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&#39;---&#39;</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;toc: false&quot;</span> <span class="co"># off by default toc generation</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagelines: &#39;</span><span class="va">${count</span><span class="op">[</span><span class="dv">0</span><span class="op">]</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagewords: &#39;</span><span class="va">${count</span><span class="op">[</span><span class="dv">1</span><span class="op">]</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagechars: &#39;</span><span class="va">${count</span><span class="op">[</span><span class="dv">2</span><span class="op">]</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagepath: &#39;</span><span class="va">${page}</span><span class="st">&#39;&quot;</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagetitle: &#39;</span><span class="va">${page</span><span class="op">/</span><span class="pp">@(</span><span class="ss">index.md</span><span class="pp">|</span><span class="ss">.md</span><span class="pp">)</span><span class="op">/</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>        <span class="kw">[[</span> <span class="va">${page</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span> <span class="ot">=~</span> <span class="pp">^</span><span class="dt">\.</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;pagedraft: &#39;1&#39;&quot;</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>        <span class="kw">[[</span> <span class="va">${page</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span> <span class="ot">=~</span> <span class="pp">^</span><span class="ss">_</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;pagehidden: &#39;1&#39;&quot;</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagereadtime: &#39;&lt;</span><span class="va">$((count</span><span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">/</span> <span class="dv">238</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span><span class="st">min&#39;&quot;</span> <span class="co"># Avg: 238 WPM</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;reporelpath: &#39;</span><span class="va">${reporelpath}</span><span class="st">&#39;&quot;</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&#39;---&#39;</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="kw">}</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">${PAGE_METADATA_FILE}</span><span class="st">&quot;</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate the page</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    <span class="co"># gfm -&gt; Github-Flavored Markdown</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    <span class="ex">pandoc</span> <span class="dt">\</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        <span class="at">-f</span> gfm <span class="at">-t</span> html <span class="dt">\</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">--standalone</span> <span class="dt">\</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        <span class="at">--lua-filter</span> <span class="st">&quot;</span><span class="va">${FILTERS_DIR}</span><span class="st">/title.lua&quot;</span> <span class="dt">\</span></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        <span class="at">--lua-filter</span> <span class="st">&quot;</span><span class="va">${FILTERS_DIR}</span><span class="st">/link.lua&quot;</span> <span class="dt">\</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        <span class="at">--highlight-style</span><span class="op">=</span>breezedark <span class="dt">\</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metadata-file</span> <span class="st">&quot;</span><span class="va">${MENU_FILE}</span><span class="st">&quot;</span> <span class="dt">\</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metadata-file</span> <span class="st">&quot;</span><span class="va">${PAGE_METADATA_FILE}</span><span class="st">&quot;</span> <span class="dt">\</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        <span class="at">--template</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/templates/page.html&quot;</span> <span class="dt">\</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        <span class="at">--toc</span> <span class="dt">\</span></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        <span class="at">-V</span> defaultauthor:moyiz <span class="dt">\</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        <span class="at">-V</span> <span class="st">&quot;description-meta:Now is better than never. Although never is often better than *right* now.&quot;</span> <span class="dt">\</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">/</span><span class="va">${page}</span><span class="st">&quot;</span> <span class="dt">\</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        <span class="at">-o</span> <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/</span><span class="va">${page</span><span class="op">/%</span><span class="ss">md</span><span class="op">/</span>html<span class="va">}</span><span class="st">&quot;</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-u</span> extglob</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate favicon</span></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/favicon.ico&quot;</span></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate OpenGraph image</span></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="at">-scale</span> 175x175 <span class="at">-monochrome</span> <span class="at">-background</span> black <span class="dt">\</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">-gravity</span> center <span class="at">-extent</span> 400x200 <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/preview.png&quot;</span></span></code></pre></div>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Publish css</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="va">DIST_CSS_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/_css&quot;</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span> <span class="ot">-e</span> <span class="st">&quot;</span><span class="va">${DIST_CSS_DIR}</span><span class="st">&quot;</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> <span class="at">-rf</span> <span class="st">&quot;</span><span class="va">${DIST_CSS_DIR}</span><span class="st">&quot;</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-rv</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/css&quot;</span> <span class="st">&quot;</span><span class="va">${DIST_CSS_DIR}</span><span class="st">&quot;</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Publish JS</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="va">DIST_JS_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/_js&quot;</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span> <span class="ot">-e</span> <span class="st">&quot;</span><span class="va">${DIST_JS_DIR}</span><span class="st">&quot;</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> <span class="at">-rf</span> <span class="st">&quot;</span><span class="va">${DIST_JS_DIR}</span><span class="st">&quot;</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-rv</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/js&quot;</span> <span class="st">&quot;</span><span class="va">${DIST_JS_DIR}</span><span class="st">&quot;</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Publish icons</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="va">DIST_ICONS_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/_icons&quot;</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span> <span class="ot">-e</span> <span class="st">&quot;</span><span class="va">${DIST_ICONS_DIR}</span><span class="st">&quot;</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> <span class="at">-rf</span> <span class="st">&quot;</span><span class="va">${DIST_ICONS_DIR}</span><span class="st">&quot;</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-rv</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/icons&quot;</span> <span class="st">&quot;</span><span class="va">${DIST_ICONS_DIR}</span><span class="st">&quot;</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-s</span> extglob</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate all pages</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> page <span class="kw">in</span> <span class="st">&quot;</span><span class="va">${MAPFILE</span><span class="op">[@]</span><span class="va">}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the relative path from the current page to the root directory</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="va">reporelpath</span><span class="op">=</span><span class="va">$(</span><span class="fu">realpath</span> <span class="at">-m</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">&quot;</span> <span class="at">--relative-to</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">${page}</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span><span class="va">)</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate page metadata</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="kw">{</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>        <span class="bu">read</span> <span class="at">-a</span> <span class="va">count</span> <span class="op">&lt;&lt;&lt;</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">wc</span> <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">/</span><span class="va">${page}</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&#39;---&#39;</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;toc: false&quot;</span> <span class="co"># off by default toc generation</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagelines: &#39;</span><span class="va">${count</span><span class="op">[</span><span class="dv">0</span><span class="op">]</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagewords: &#39;</span><span class="va">${count</span><span class="op">[</span><span class="dv">1</span><span class="op">]</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagechars: &#39;</span><span class="va">${count</span><span class="op">[</span><span class="dv">2</span><span class="op">]</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagepath: &#39;</span><span class="va">${page}</span><span class="st">&#39;&quot;</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagetitle: &#39;</span><span class="va">${page</span><span class="op">/</span><span class="pp">@(</span><span class="ss">index.md</span><span class="pp">|</span><span class="ss">.md</span><span class="pp">)</span><span class="op">/</span><span class="va">}</span><span class="st">&#39;&quot;</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        <span class="kw">[[</span> <span class="va">${page</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span> <span class="ot">=~</span> <span class="pp">^</span><span class="dt">\.</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;pagedraft: &#39;1&#39;&quot;</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        <span class="kw">[[</span> <span class="va">${page</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span> <span class="ot">=~</span> <span class="pp">^</span><span class="ss">_</span> <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;pagehidden: &#39;1&#39;&quot;</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;pagereadtime: &#39;&lt;</span><span class="va">$((count</span><span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">/</span> <span class="dv">238</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span><span class="st">min&#39;&quot;</span> <span class="co"># Avg: 238 WPM</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;baseurl: &#39;</span><span class="va">${BASE_URL}</span><span class="st">&#39;&quot;</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&#39;---&#39;</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    <span class="kw">}</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">${PAGE_METADATA_FILE}</span><span class="st">&quot;</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate the page</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    <span class="co"># gfm -&gt; Github-Flavored Markdown</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    <span class="ex">pandoc</span> <span class="dt">\</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>        <span class="at">-f</span> gfm <span class="at">-t</span> html <span class="dt">\</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        <span class="at">--standalone</span> <span class="dt">\</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>        <span class="at">--lua-filter</span> <span class="st">&quot;</span><span class="va">${FILTERS_DIR}</span><span class="st">/title.lua&quot;</span> <span class="dt">\</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>        <span class="at">--lua-filter</span> <span class="st">&quot;</span><span class="va">${FILTERS_DIR}</span><span class="st">/link.lua&quot;</span> <span class="dt">\</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>        <span class="at">--highlight-style</span><span class="op">=</span>breezedark <span class="dt">\</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metadata-file</span> <span class="st">&quot;</span><span class="va">${MENU_FILE}</span><span class="st">&quot;</span> <span class="dt">\</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metadata-file</span> <span class="st">&quot;</span><span class="va">${PAGE_METADATA_FILE}</span><span class="st">&quot;</span> <span class="dt">\</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>        <span class="at">--template</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/templates/page.html&quot;</span> <span class="dt">\</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>        <span class="at">--toc</span> <span class="dt">\</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>        <span class="at">-V</span> defaultauthor:moyiz <span class="dt">\</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>        <span class="at">-V</span> <span class="st">&quot;description-meta:Now is better than never. Although never is often better than *right* now.&quot;</span> <span class="dt">\</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;</span><span class="va">${PAGES_DIR}</span><span class="st">/</span><span class="va">${page}</span><span class="st">&quot;</span> <span class="dt">\</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>        <span class="at">-o</span> <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/</span><span class="va">${page</span><span class="op">/%</span><span class="ss">md</span><span class="op">/</span>html<span class="va">}</span><span class="st">&quot;</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> <span class="at">-u</span> extglob</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate favicon</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/favicon.ico&quot;</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate OpenGraph image</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ex">magick</span> <span class="st">&quot;</span><span class="va">${REPO_DIR}</span><span class="st">/favicon.bmp&quot;</span> <span class="at">-scale</span> 175x175 <span class="at">-monochrome</span> <span class="at">-background</span> black <span class="dt">\</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    <span class="at">-gravity</span> center <span class="at">-extent</span> 400x200 <span class="st">&quot;</span><span class="va">${DIST_DIR}</span><span class="st">/_preview.png&quot;</span></span></code></pre></div>
           </div>
         </main>
       </div>
       <footer class="footer">
-        S: build.sh.md | L: 113 | W:
-        396 | C: 3196
+        S: build.sh.md | L: 128 | W:
+        444 | C: 3632
         | RT: &lt;2min
       </footer>
     </div>

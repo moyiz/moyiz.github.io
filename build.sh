@@ -6,7 +6,7 @@ REPO_DIR=$(dirname "$(realpath "$0")")
 
 PAGES_DIR=${REPO_DIR}/content
 FILTERS_DIR=${REPO_DIR}/filters
-DIST_DIR=${REPO_DIR}/dist
+DIST_DIR=${REPO_DIR}/docs
 PAGE_LIST_FILE=$(mktemp)
 MENU_FILE=$(mktemp)
 PAGE_METADATA_FILE=$(mktemp)
@@ -60,6 +60,21 @@ readarray -t < "${PAGE_LIST_FILE}"
 
 cat "${MENU_FILE}"
 
+# Publish css
+DIST_CSS_DIR="${DIST_DIR}/_css"
+[[ -e "${DIST_CSS_DIR}" ]] && rm -rf "${DIST_CSS_DIR}"
+cp -rv "${REPO_DIR}/css" "${DIST_CSS_DIR}"
+
+# Publish JS
+DIST_JS_DIR="${DIST_DIR}/_js"
+[[ -e "${DIST_JS_DIR}" ]] && rm -rf "${DIST_JS_DIR}"
+cp -rv "${REPO_DIR}/js" "${DIST_JS_DIR}"
+
+# Publish icons
+DIST_ICONS_DIR="${DIST_DIR}/_icons"
+[[ -e "${DIST_ICONS_DIR}" ]] && rm -rf "${DIST_ICONS_DIR}"
+cp -rv "${REPO_DIR}/icons" "${DIST_ICONS_DIR}"
+
 shopt -s extglob
 # Generate all pages
 for page in "${MAPFILE[@]}"; do
@@ -79,7 +94,7 @@ for page in "${MAPFILE[@]}"; do
 		[[ ${page##*/} =~ ^\. ]] && echo "pagedraft: '1'"
 		[[ ${page##*/} =~ ^_ ]] && echo "pagehidden: '1'"
 		echo "pagereadtime: '<$((count[1] / 238 + 1))min'" # Avg: 238 WPM
-		echo "reporelpath: '${reporelpath}'"
+		echo "baseurl: '${BASE_URL}'"
 		echo '---'
 	} > "${PAGE_METADATA_FILE}"
 
@@ -107,4 +122,4 @@ magick "${REPO_DIR}/favicon.bmp" "${DIST_DIR}/favicon.ico"
 
 # Generate OpenGraph image
 magick "${REPO_DIR}/favicon.bmp" -scale 175x175 -monochrome -background black \
-	-gravity center -extent 400x200 "${DIST_DIR}/preview.png"
+	-gravity center -extent 400x200 "${DIST_DIR}/_preview.png"
