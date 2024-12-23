@@ -36,7 +36,7 @@ fi
 } > "${BUILD_SCRIPT_PAGE}"
 
 # Create directories
-find "${PAGES_DIR}" -mindepth 1 -type d -printf "${DIST_DIR}/%P\n" | xargs mkdir -p
+find "${PAGES_DIR}" -mindepth 1 -type d -printf "${DIST_DIR}/%P\n" | xargs --no-run-if-empty mkdir -p
 
 # All pages (without PAGES_DIR prefix)
 find "${PAGES_DIR}" -type f -name '*.md' -printf '%P\n' > "${PAGE_LIST_FILE}"
