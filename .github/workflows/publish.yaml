@@ -25,4 +25,4 @@ jobs:
           commit_message: "release: generate and publish"
           branch: ${{ github.head_ref }}
           file_pattern: "docs/"
-          add_options: "--force" # docs/ is git ignored
+          add_options: "--force docs/" # docs/ is git ignored
