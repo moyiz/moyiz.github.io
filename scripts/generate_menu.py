@@ -60,6 +60,7 @@ class Item:
     target: str | None = None
     parent: Item | None = None
     items: list[Item] = field(default_factory=list)
+    set_class: bool = True
 
     def get_item(self, label: str) -> Item | None:
         for it in self.items:
@@ -69,7 +70,7 @@ class Item:
 
 def parse_pages(pages: str) -> Item:
     paths = pages.splitlines()
-    root = Item("~/", target="")
+    root = Item("~/", target="", set_class=False)
     for path in paths:
         p = Path(path.removesuffix(".md"))
         target = f"{p}.html"
@@ -95,8 +96,14 @@ def generate_html(items: list[Item], base_url: str) -> str:
     s = ""
     if items:
         s = "<ul>"
-        for item in items:
-            s += "<li>"
+        for i, item in enumerate(items, start=1):
+            if item.set_class:
+                if i == len(items):
+                    s += '<li class="last">'
+                else:
+                    s += '<li class="item">'
+            else:
+                s += "<li>"
             if item.target:
                 s += f'<a href="{base_url}/{item.target}">{item.label}</a>'
             else:

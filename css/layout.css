@@ -225,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-y: auto;
 }
 .menu {
-  flex: 0 0 16em;
+  /*flex: 0 0 24em;*/
   max-width: 20%;
   order: -1;
   border-right: 1px solid #ccc;
@@ -234,6 +234,12 @@ ul.task-list li input[type="checkbox"] {
 .menu ul {
   list-style-type: none;
   padding: 0 1em;
+}
+.menu ul li.item:before {
+  content: "├─ ";
+}
+.menu ul li.last:before {
+  content: "└─ ";
 }
 .icon {
   filter: invert(1);
@@ -255,6 +261,27 @@ body.invert {
   background-color: #f00;
 }
 /* Markdown notes */
+.note {
+  --color: #0099ff;
+  --icon: url("../_icons/circle-exclamation.svg");
+}
+.important {
+  --color: #bb99ff;
+  --icon: url("../_icons/square-exclamation.svg");
+}
+.warning {
+  --color: #ffbb00;
+  --icon: url("../_icons/triangle-exclamation.svg");
+}
+.note,
+.important,
+.warning {
+  border-left: 0.25em solid var(--color);
+  padding-left: 0.75em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: #888;
+}
 .title {
   color: var(--color);
 }
@@ -267,27 +294,6 @@ body.invert {
   vertical-align: middle;
   float: left;
   margin-right: 1em;
-}
-.note {
-  --color: #0099ff;
-  --icon: url("../icons/circle-exclamation.svg");
-}
-.important {
-  --color: #bb99ff;
-  --icon: url("../icons/square-exclamation.svg");
-}
-.warning {
-  --color: #ffbb00;
-  --icon: url("../icons/triangle-exclamation.svg");
-}
-.note,
-.important,
-.warning {
-  border-left: 0.25em solid var(--color);
-  padding-left: 0.75em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  color: #888;
 }
 input[type="checkbox"] {
   pointer-events: none;
