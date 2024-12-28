@@ -97,12 +97,15 @@ code {
   font-size: 85%;
   margin: 0;
   hyphens: manual;
+  color: #ff5555;
+  white-space: pre-wrap;
 }
 pre {
   margin: 1em 0;
   overflow: auto;
 }
 pre code {
+  color: inherit;
   padding: 0;
   overflow: visible;
   overflow-wrap: normal;
@@ -151,9 +154,6 @@ td {
 }
 #TOC a:not(:hover) {
   text-decoration: none;
-}
-code {
-  white-space: pre-wrap;
 }
 span.smallcaps {
   font-variant: small-caps;
